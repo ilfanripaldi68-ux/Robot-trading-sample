@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Android APK (fixed project-name)
 
 on:
   push:
@@ -25,17 +25,15 @@ jobs:
         with:
           flutter-version: '3.19.0'
 
-      # Debug supaya kita tahu isi folder repo
       - name: Debug - list files
         run: |
           echo "PWD=$(pwd)"
+          echo "Root files:"
           ls -la
-          echo "Isi folder root:"
-          ls -la .
 
-      # Buat struktur Flutter project kalau belum lengkap (fix error root)
-      - name: Ensure Flutter project
-        run: flutter create .
+      # gunakan project-name yang valid agar flutter create tidak gagal
+      - name: Ensure Flutter project (create with valid name)
+        run: flutter create --project-name robot_trading_sample .
 
       - name: Install dependencies
         run: flutter pub get
