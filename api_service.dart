@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String twelveApiKey = 'YOUR_TWELVEDATA_KEY';
+  final String twelveApiKey = '011b86a016224bd4a0a100d565d4ea3f';
 
   Future<double?> fetchForexLatest(String pair) async {
     try {
