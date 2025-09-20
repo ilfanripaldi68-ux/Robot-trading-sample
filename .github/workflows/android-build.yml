@@ -47,7 +47,3 @@ jobs:
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
-          
-git add .github/workflows/android-build.yml
-git commit -m "Add GitHub Actions workflow for building APK"
-git push origin main
